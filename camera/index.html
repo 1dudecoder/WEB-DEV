@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <video controls ></video>
+
+    <button id="record">start</button>
+    <!-- <button id="stop">stop</button> -->
+    <button id = "capture">capture</button>
+
+</body>
+    <script>
+    let video = document.querySelector("video");
+    let recordbtn = document.querySelector("#record");
+    // let stopbtn = document.querySelector("#stop");
+    let capturebtn = document.querySelector("#capture");
+    let mediaRecorder;
+    let isRecoding = false;
+    let chunks = [];
+
+    recordbtn.addEventListener("click",function(e){
+        if(isRecoding){
+            mediaRecorder.stop();
+            isRecoding = false;
+            e.currentTarget.innerText = "Start";
+        }else{
+            mediaRecorder.start();
+            isRecoding = true;
+            e.currentTarget.innerText = "Recording"
+        }
+    })
+    
+    // startbtn.addEventListener("click",function(e){
+    //     mediaRecorder.start(); //mediaRecorder object containt 2 fucntion on it slf start and stop to recorder video
+    // })
+
+    // stopbtn.addEventListener("click",function(e){
+    //     mediaRecorder.stop();
+    // })
+
+    capturebtn.addEventListener("click",function(e){
+        let canvas = document.createElement("canvas");
+        canvas.height = video.height;
+        canvas.width = video.width;
+        let tool = canvas.getContext("2d");
+        tool.drawImage(video,0,0);
+        
+        let a = document.createElement("a");
+        let link = canvas.toDataURL();
+        a.href = link;
+        a.download = "image.png";
+        a.click();
+        a.remove();
+        canvas.remove();
+        })
+
+
+    navigator.mediaDevices.getUserMedia({video: true, audio: true}) // navigator is an object provide by browser to access the hardware
+    //video: { width: 1280, height: 720 } you can also give hight and width in place of true 
+    .then(function(mediaStream){       //and it returns persmissions when it resolve  medidastream is a video and ausio 
+        mediaRecorder = new MediaRecorder(mediaStream);  //it get video from mediaStream give to recorder it to media recorder
+        
+        mediaRecorder.addEventListener("dataavailable",function(e){
+            chunks.push(e.data);
+        })
+        
+        mediaRecorder.addEventListener("stop", function(e){
+            
+            let blob = new Blob(chunks, { minetype: "video/mp4" }); //blop is a large binary file and chunks is also binary file so it combine it and make a video
+            chunks = []
+            let a = document.createAttribute("a");
+            let url = window.URL.createObjectURL(blob);
+            a.href = url;
+            a.download = "video.mp4";
+            a.click();
+            a.remove();
+        });
+        
+        video.srcObject = mediaStream;    //video.srcobject is src from video element like in html we use
+        video.onloadedmetadata = function(e) {
+        video.play();
+        }
+
+    }).catch(function(err){
+        console.log(err);
+    });
+
+    </script>
+</html>

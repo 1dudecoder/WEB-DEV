@@ -1,0 +1,219 @@
+
+    *{
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    .container{
+        height: 100vh;
+        width: 100vw;
+        
+    }
+
+    .nav{
+        height: 12vh;
+        width: 100vw;
+        background-color: #333333;
+        display: flex;
+        
+
+    }
+
+    .rank{
+        height: 10vh;
+        width: 20vw;
+        margin-left: 4rem;
+        margin-top: 1vh;
+    }
+
+
+    .action{
+        display: flex;
+        height: 10vh;
+        width: 10vw;
+        margin-left: 3rem;
+        margin-top: 1vh;
+
+    }
+
+    .rank{
+        display: flex;
+    }
+
+    .filter{
+        border-radius: 2px;
+        background-color: #444444;
+        height: 10vh;
+        width: 25%;
+        
+    }
+
+    .filter button{
+        margin: 2.5vh;
+        height: 5vh;
+        width: 2.5vw;
+    }
+
+    .action .filter{
+        height: 10vh;
+        width: 50%;
+    }
+
+    .pink-btn{
+        background-color: pink;
+    }
+
+    .lightblue-btn{
+        background-color: skyblue;
+    }
+
+    .green-btn{
+        background-color: lightgreen;
+    }
+
+    .black-btn{
+        background-color: black;
+    }
+
+    .add-btn{
+        color: white;
+        background-color: #444444;
+    }
+
+    .multi-btn{
+        color: white;
+        background-color: #444444;
+    }
+
+    .filter:hover{
+        background-color: #393939;
+    }
+
+
+.modal{
+    display: flex;
+    height: 49vh;
+    width: 44vw;
+    position: fixed;
+    left: 50vh;
+    right: 50vh;
+    top : 25vh;
+    box-shadow: 0px 0px 10px 5px ;
+}
+
+
+.editor{
+    outline: none;
+    height: 49vh;
+    width: 33vw;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    overflow: auto;
+    
+}
+
+.editor:empty:before {
+    content: attr(data-placeholder);
+}
+
+.mycolors{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    height: 49vh;
+    width: 11vw;
+    background-color: #333333;
+    
+}
+
+.modalcolor.pink{
+    height: 8vh;
+    width: 13vh;
+    background-color: pink;
+}
+
+.modalcolor.blue{
+    height: 8vh;
+    width: 13vh;
+    background-color: skyblue;
+}
+
+.modalcolor.green{
+    height: 8vh;
+    width: 13vh;
+    background-color: greenyellow;
+}
+
+.modalcolor.black{
+    height: 8vh;
+    width: 13vh;
+    background-color: black;
+}
+
+.modalcolor {
+    margin: 4px;
+    opacity: 0.5;
+}
+
+.modalcolor:hover{
+    opacity: 1;
+}
+
+.taskshow{
+    box-shadow: 0px 0px 5px 0.2px;
+    width: 20vw;
+    position: fixed;
+    left: 79vh;
+    top: 25vh;
+}
+
+.taskcolor{
+    display: flex;
+    height: 1.5vh;
+    width: 20vw;
+    
+}
+
+
+.pink{
+    background-color: pink;
+}
+
+.green{
+    background-color: lightgreen;
+}
+
+.blue{
+    background-color: lightblue;
+}
+
+
+.black{
+    background-color: black;
+}
+
+
+h5{
+    color:  red;
+}
+
+
+
+.taskeditor{
+    padding: 5px;
+    height: 31vh;
+    width: 20vw;
+    font-size: 0.9rem;
+    outline: none;
+    overflow: auto;
+    text-align: center;
+    
+
+}
+
+.active{
+    border: 2px solid red;
+}

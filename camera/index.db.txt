@@ -1,0 +1,28 @@
+datastore in nosqldata is a collections format in object 
+
+collections = {
+    {name: "nitin", rollno : 24, class: "lkansd"},
+    {name: "nitin", rollno : 24, address: "kumbhichour"},
+}
+
+<script>
+
+let req = indexdDB.open("NotesDB",1);    
+
+req.addEventListener("success",function(){
+    let accesstodatabase = req.result;
+    alert ("db was opened successfully);
+    
+});
+
+req.addEventListener("upgradeneeded",function(){
+    let accesstodatabase = req.result;
+    alert ("db was upgrad/created successfully);  //call when you change the version of datadata or do any changes in dataabase 
+    // i can create an object store in just upgradeneeded
+});
+
+req.addEventListener("error",function(E){
+    alert("when any error created ")  // if any error found in creating database then this function is called;
+})
+
+</script> 
