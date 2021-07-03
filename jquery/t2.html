@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        .some-class{
+            height: 3rem;
+            border: 1px solid;
+            background-color: rgb(168, 47, 47);
+            color: white;
+            text-align: center;
+            font-size: 2rem;
+        }
+    </style>
+<body>
+    <ul>
+        <li > Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, minima! </li>
+        <li> Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, minima! </li>
+        <li> Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, minima! </li>
+        <li> Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, minima! </li>
+        <li> Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, minima! </li>
+        <li> Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, minima! </li>
+        <li> Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, minima! </li>
+        <li> Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, minima! </li>
+        <li> Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, minima! </li>
+        <li> Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, minima! </li>
+    </ul>
+</body>
+<script>
+    let li = document.querySelectorAll("li");
+
+    for(let i = 0 ; i < li.length; i++){
+        li[i].addEventListener("click",function(e){
+            e.currentTarget.classList = "some-class";
+        })
+
+        count = 0;
+        li[i].addEventListener("data-click",function(e){
+            console.log(e.currentTarget.data-click)
+        });
+        
+    };
+
+</script>
+</html>
