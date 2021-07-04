@@ -1,0 +1,27 @@
+React is a libery of js 
+
+We can also do work with dom html and css and js so why we need react
+1 - reuseable component
+2 - complexity.
+3 - fast rendoring shadow dom ki wjha se..
+
+Shadow Dom - react ne bnaya hai jo fast rendorin g krta hai or fir dom mai dikha deta hai
+direct manupulation to dom mai hota hai pr shadow dom ki wjha se jldi render hota hai.
+shadow dom do change at all one time but dom do it in 1 by 1 so it is lazy then react.
+
+jsx = javascript xml
+
+react k js functions thode complement hai to koi inhe use nhi krta hai
+to ese chord k hum use krte hai jsx simple html hai yar jo js ko chlane k liye hume 
+babel ki jarurt pdti hai
+babel 1 transpiler hai jo jsx code ko js code m convert krta hai 
+
+
+State - component k ander ka data state hota hai
+jb hum data ko state k nam se save krta hai to wo special data hota hai 
+
+
+
+
+
+
